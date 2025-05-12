@@ -1,9 +1,9 @@
 <?php
+session_start();
 
 
 
-
-include_once('../controladores/validar.php');
+// include_once('../controladores/validar.php');
 include_once('../controladores/menu.php');
 
 // Verificación EXTRA segura
