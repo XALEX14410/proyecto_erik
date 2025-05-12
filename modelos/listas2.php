@@ -6,7 +6,7 @@ class consulta_observador extends BaseDatos // Heredar de listas_select
 {
 public function obtener_usuario_por_control($control)
 {
-    $query = "SELECT Nombre, Apellido, idPerfil FROM usuarios WHERE Control = ?";
+    $query = "SELECT * FROM General WHERE Control = ?";
     $stmt = $this->getBD()->prepare($query);
     $stmt->bind_param("s", $control);
     $stmt->execute();

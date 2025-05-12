@@ -5,7 +5,7 @@ include_once('../modelos/basededatos.php');
 include_once('../modelos/listas2.php');
 
 // Verificar si la sesión está activa
-if (!isset($_SESSION['usuario'], $_SESSION['idPerfil'], $_SESSION['Control'])) {
+if (!isset($_SESSION['usuario']) || !isset($_SESSION['idPerfil']) || !isset($_SESSION['Control'])) {
     echo "<p style='color: red; text-align: center;'>Acceso denegado. Inicia sesión.</p>";
     exit;
 }
