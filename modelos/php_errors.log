@@ -1,0 +1,30 @@
+[27-Apr-2025 17:58:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method TuClase::getBD() in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php:14
+Stack trace:
+#0 C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php(49): TuClase->obtener_eventos_ajax()
+#1 {main}
+  thrown in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php on line 14
+[27-Apr-2025 17:58:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method TuClase::getBD() in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php:14
+Stack trace:
+#0 C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php(49): TuClase->obtener_eventos_ajax()
+#1 {main}
+  thrown in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php on line 14
+[27-Apr-2025 17:58:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method TuClase::getBD() in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php:14
+Stack trace:
+#0 C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php(49): TuClase->obtener_eventos_ajax()
+#1 {main}
+  thrown in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php on line 14
+[27-Apr-2025 17:58:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method TuClase::getBD() in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php:14
+Stack trace:
+#0 C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php(49): TuClase->obtener_eventos_ajax()
+#1 {main}
+  thrown in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php on line 14
+[27-Apr-2025 17:58:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method TuClase::getBD() in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php:14
+Stack trace:
+#0 C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php(49): TuClase->obtener_eventos_ajax()
+#1 {main}
+  thrown in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php on line 14
+[27-Apr-2025 17:58:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method TuClase::getBD() in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php:14
+Stack trace:
+#0 C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php(49): TuClase->obtener_eventos_ajax()
+#1 {main}
+  thrown in C:\xampp\htdocs\coordinadores_y_testigos\modelos\ajax12.php on line 14
