@@ -6,7 +6,7 @@
         /*Configuracion de la base de datos****************/
         private $user       = "nuevo_usuario";
         private $pass       = "contraseña";
-        private $base_datos = "super_cyt";
+        private $base_datos = "baseDistribuidas";
         /**************************************************/
         protected $campos = array();
         protected $llaveprimaria;
