@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 
 // Incluir archivos necesarios
 include_once('../modelos/basededatos.php');
-include_once('../modelos/consulta_observador.php');
+include_once('../modelos/listas2.php');
 
 // Verificar si la sesión está activa
 if (!isset($_SESSION['usuario'])) {
