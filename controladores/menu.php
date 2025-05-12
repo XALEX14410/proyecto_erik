@@ -9,251 +9,46 @@ class Menu {
             <div class="file-grid">
                 <div class="file-card">
                     <div class="file-name">
+                        <i class="bi bi-star-fill file-icon"></i>
+                        <a href="obtener_calificaciones.php">Calificaciones</a>
+                    </div>
+                    <div class="file-details">
+                        <span class="file-count">Gestión de calificaciones</span>
+                    </div>
+                </div>
+                
+                <div class="file-card">
+                    <div class="file-name">
+                        <i class="bi bi-person-lines-fill file-icon"></i>
+                        <a href="obtener_info_estudiantes.php">Info de estudiantes</a>
+                    </div>
+                    <div class="file-details">
+                        <span class="file-count">Información general de estudiantes</span>
+                    </div>
+                </div>
+                
+                <div class="file-card">
+                    <div class="file-name">
                         <i class="bi bi-people-fill file-icon"></i>
-                        <a href="obtener_coordinadores.php">Coordinadores electorales</a>
+                        <a href="obtener_login_perfiles.php">Perfiles</a>
                     </div>
                     <div class="file-details">
-                        <span class="file-count">Administración de coordinadores</span>
+                        <span class="file-count">Administración de perfiles</span>
                     </div>
                 </div>
                 
                 <div class="file-card">
                     <div class="file-name">
-                        <i class="bi bi-eye-fill file-icon"></i>
-                        <a href="obtener_testigos.php">Representantes de casillas</a>
+                        <i class="bi bi-wallet-fill file-icon"></i>
+                        <a href="obtener_saldos.php">Saldos</a>
                     </div>
                     <div class="file-details">
-                        <span class="file-count">Gestión de testigos</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-table file-icon"></i>
-                        <a href="obtener_mesas_votacion.php">Casillas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Control de mesas</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-person-vcard-fill file-icon"></i>
-                        <a href="obtener_personas.php">Personas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Registro de personas</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-person-fill-gear file-icon"></i>
-                        <a href="obtener_usuarios.php">Usuarios</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Administración de usuarios</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-calendar-check-fill file-icon"></i>
-                        <a href="obtener_asistencias.php">Votacion</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Control de votación</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-exclamation-triangle-fill file-icon"></i>
-                        <a href="obtener_alertas.php">Alertas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Gestión de alertas</span>
-                    </div>
-                </div>
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-calendar-event-fill file-icon"></i>
-                        <a href="agenda.html">Agenda / Calendario</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Gestión de eventos y actividades</span>
+                        <span class="file-count">Gestión de saldos</span>
                     </div>
                 </div>
             </div>';
 
-        } elseif ($idPerfil == 2) {
-            // Solo mostrar menú completo si es administrador (idPerfil = 2)
-       
-            echo '
-            <div class="file-grid">
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-people-fill file-icon"></i>
-                        <a href="obtener_coordinadores.php">Coordinadores electorales</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Administración de coordinadores</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-eye-fill file-icon"></i>
-                        <a href="obtener_testigos.php">Representantes de casillas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Gestión de testigos</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-table file-icon"></i>
-                        <a href="obtener_mesas_votacion.php">Casillas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Control de mesas</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-person-vcard-fill file-icon"></i>
-                        <a href="obtener_personas.php">Personas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Registro de personas</span>
-                    </div>
-                </div>
-                
-
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-calendar-check-fill file-icon"></i>
-                        <a href="obtener_asistencias.php">Votacion</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Control de votación</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-exclamation-triangle-fill file-icon"></i>
-                        <a href="obtener_alertas.php">Alertas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Gestión de alertas</span>
-                    </div>
-                </div>
-            </div>'; 
         } 
-        elseif ($idPerfil == 3) {
-            // Solo mostrar menú completo si es coordinador (idPerfil = 3)
-       
-            echo '
-            <div class="file-grid">
-
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-eye-fill file-icon"></i>
-                        <a href="obtener_testigos.php">Representantes de casillas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Gestión de testigos</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-table file-icon"></i>
-                        <a href="obtener_mesas_votacion.php">Casillas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Control de mesas</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-person-vcard-fill file-icon"></i>
-                        <a href="obtener_personas.php">Personas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Registro de personas</span>
-                    </div>
-                </div>
-                
-               
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-calendar-check-fill file-icon"></i>
-                        <a href="obtener_asistencias.php">Votacion</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Control de votación</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-exclamation-triangle-fill file-icon"></i>
-                        <a href="obtener_alertas.php">Alertas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Gestión de alertas</span>
-                    </div>
-                </div>
-            </div>'; 
-        }
-        elseif ($idPerfil == 4) {
-            // Solo mostrar menú completo si es representante de casilla (idPerfil = 4)
-       
-            echo '
-            <div class="file-grid">
-
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-person-vcard-fill file-icon"></i>
-                        <a href="obtener_personas.php">Personas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Registro de personas</span>
-                    </div>
-                </div>
-                
-      
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-calendar-check-fill file-icon"></i>
-                        <a href="obtener_asistencias.php">Votacion</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Control de votación</span>
-                    </div>
-                </div>
-                
-                <div class="file-card">
-                    <div class="file-name">
-                        <i class="bi bi-exclamation-triangle-fill file-icon"></i>
-                        <a href="obtener_alertas.php">Alertas</a>
-                    </div>
-                    <div class="file-details">
-                        <span class="file-count">Gestión de alertas</span>
-                    </div>
-                </div>
-            </div>'; 
-        }  
         else {
             // Mensaje para otros perfiles (estructura preparada para futuras implementaciones)
             echo '<div class="alert alert-info" style="margin: 20px;">
