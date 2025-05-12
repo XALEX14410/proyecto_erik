@@ -5,7 +5,7 @@ include_once('../modelos/basededatos.php');
 include_once('../modelos/listas2.php');
 
 // Verificar si la sesión está activa
-if (!isset($_SESSION['usuario']) || !isset($_SESSION['idPerfil']) || !isset($_SESSION['Control'])) {
+if (!isset($_SESSION['usuario'])) {
     echo "<p style='color: red; text-align: center;'>Acceso denegado. Inicia sesión.</p>";
     exit;
 }
@@ -21,7 +21,7 @@ if (!$conexion) {
 
 // Obtener información del usuario
 $consulta_observador = new listas2();
-$usuario_actual = $consulta_observador->obtener_usuario_por_control($_SESSION['Control']);
+$usuario_actual = $consulta_observador->obtener_usuario_por_control($_SESSION['usuario']);
 
 if (!$usuario_actual) {
     echo "<p style='color: red; text-align: center;'>Usuario no encontrado. Contacta al administrador.</p>";
