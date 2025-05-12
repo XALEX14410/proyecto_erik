@@ -2,7 +2,7 @@
     class BaseDatos {
         private $bd;
         protected $mensajes = array();
-        private $server     = 'localhost';
+        private $server     = '172.16.3.223';
         /*Configuracion de la base de datos****************/
         private $user       = "nuevo_usuario";
         private $pass       = "contraseña";
