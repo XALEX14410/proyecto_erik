@@ -622,35 +622,56 @@ private function generar_tabla($sql, $columnas, $url_editar, $id_campo)
         echo "<p>No se encontraron resultados.</p>";
     }
 }
-public function obtener_usuario_por_id($idUsuario)
+// public function obtener_usuario_por_id($idUsuario)
+// {
+//     $sql = "SELECT 
+//                 u.idUsuario, 
+//                 u.nombre, 
+//                 u.primApellido, 
+//                 u.segApellido, 
+//                 u.usuario, 
+//                 u.password, 
+//                 u.idPerfil, 
+//                 lp.perfil, 
+//                 lp.alias, 
+//                 u.idPartido, 
+//                 u.idPersona, 
+//                 c.idCoordinador AS idCoordinador, 
+//                 u.idTestigo, 
+//                 u.estatus 
+//             FROM dbo_usuarios u 
+//             INNER JOIN dbo_login_perfiles lp ON u.idPerfil = lp.idPerfil 
+//             LEFT JOIN dbo_coordinadores c ON u.idPersona = c.idPersona 
+//             WHERE u.idUsuario = ?";
+//     $con = $this->getBD();
+//     $stmt = $con->prepare($sql);
+//     $stmt->bind_param("i", $idUsuario);
+//     $stmt->execute();
+//     $resultado = $stmt->get_result();
+    
+//     return $resultado->fetch_assoc();
+// }
+
+public function obtener_usuario_por_control($control)
 {
     $sql = "SELECT 
-                u.idUsuario, 
-                u.nombre, 
-                u.primApellido, 
-                u.segApellido, 
-                u.usuario, 
-                u.password, 
-                u.idPerfil, 
-                lp.perfil, 
-                lp.alias, 
-                u.idPartido, 
-                u.idPersona, 
-                c.idCoordinador AS idCoordinador, 
-                u.idTestigo, 
-                u.estatus 
-            FROM dbo_usuarios u 
-            INNER JOIN dbo_login_perfiles lp ON u.idPerfil = lp.idPerfil 
-            LEFT JOIN dbo_coordinadores c ON u.idPersona = c.idPersona 
-            WHERE u.idUsuario = ?";
+                Control, 
+                Nombre, 
+                Apellido, 
+                usuario, 
+                contrasena, 
+                idPerfil
+            FROM Generales
+            WHERE Control = ?";
     $con = $this->getBD();
     $stmt = $con->prepare($sql);
-    $stmt->bind_param("i", $idUsuario);
+    $stmt->bind_param("s", $control);
     $stmt->execute();
     $resultado = $stmt->get_result();
     
     return $resultado->fetch_assoc();
 }
+
 public function obtener_usuarios_por_perfil($idPerfil)
 {
     $sql = "SELECT 

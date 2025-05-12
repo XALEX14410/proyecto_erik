@@ -15,7 +15,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['idPerfil'])) {
 
 // Obtener información del usuario actual
 $consulta_observador = new listas2();
-$usuario_actual = $consulta_observador->obtener_usuario_por_id($_SESSION['idUsuario']);
+$usuario_actual = $consulta_observador->obtener_usuario_por_control($_SESSION['Control']);
 
 // Función para mostrar información del usuario
 function mostrar_info_usuario($usuario) {
@@ -30,24 +30,6 @@ function mostrar_info_usuario($usuario) {
                     <h3 style='color: #555;'>Datos del Perfil</h3>
                     <p><strong>Perfil:</strong> {$usuario['idPerfil']}</p>
                 </div>
-            </div>";
-
-    // Mostrar información adicional según el perfil
-    switch ($usuario['idPerfil']) {
-        case 1: // Super Administrador (SU)
-            echo "<div style='margin-top: 20px; padding: 15px; background-color: #e6f7ff; border-radius: 5px;'>
-                <h3 style='color: #0066cc;'>Privilegios de Super Administrador (SU)</h3>
-                <p>Tienes acceso completo al sistema, incluyendo la gestión de usuarios, perfiles, configuraciones y reportes globales.</p>
-              </div>";
-            break;
-        case 2: // Administrador (ADM)
-            echo "<div style='margin-top: 20px; padding: 15px; background-color: #fff2e6; border-radius: 5px;'>
-                <h3 style='color: #cc6600;'>Privilegios de Administrador (ADM)</h3>
-                <p>Puedes gestionar usuarios, perfiles y configuraciones dentro de tu área asignada.</p>
-              </div>";
-            break;
-        case 3: // Coordinador (COR)
-            echo "<div style='margin-top: 20px;
             </div>";
 
     // Mostrar información adicional según el perfil
