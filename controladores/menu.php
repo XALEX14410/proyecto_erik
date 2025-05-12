@@ -263,22 +263,24 @@ class Menu {
         }
     }
     
-    // Método auxiliar para obtener el nombre del perfil (puede ser útil después)
+    // Método auxiliar para obtener el nombre del perfil y alias (puede ser útil después)
     private function getNombrePerfil($idPerfil) {
         // Suponiendo que ya tienes una conexión a la base de datos
         $conexion = $this->db; // Ajusta esto según tu clase (PDO o MySQLi)
     
-        $query = "SELECT idPerfil, perfil FROM dbo_login_perfiles";
+        $query = "SELECT idPerfil, perfil, alias FROM login_perfiles";
         $stmt = $conexion->prepare($query);
         $stmt->execute();
     
         $perfiles = [];
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $perfiles[$row['idPerfil']] = $row['perfil'];
+            $perfiles[$row['idPerfil']] = [
+                'perfil' => $row['perfil'],
+                'alias' => $row['alias']
+            ];
         }
     
-        return $perfiles[$idPerfil] ?? 'Perfil Desconocido';
+        return $perfiles[$idPerfil] ?? ['perfil' => 'Perfil Desconocido', 'alias' => 'Alias Desconocido'];
     }
-    
 }
 ?>

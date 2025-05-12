@@ -4,8 +4,8 @@ session_start();
 include_once('../modelos/basededatos.php');
 include_once('../modelos/listas2.php');
 
-// Verificar si la sesión está activa
-if (!isset($_SESSION['usuario']) || !isset($_SESSION['idPerfil'])) {
+// Verificar si la sesión está activa y tiene el control definido
+if (!isset($_SESSION['usuario']) || !isset($_SESSION['idPerfil']) || !isset($_SESSION['Control'])) {
     echo "<div style='text-align: center; margin-top: 20px;'>
             <p style='color: red; font-weight: bold;'>Acceso denegado.</p>
             <p style='color: #555;'>Por favor, inicia sesión para acceder al sistema.</p>
@@ -17,7 +17,7 @@ if (!isset($_SESSION['usuario']) || !isset($_SESSION['idPerfil'])) {
 $consulta_observador = new listas2();
 $usuario_actual = $consulta_observador->obtener_usuario_por_control($_SESSION['Control']);
 
-// Función para mostrar información del usuario
+// Función para mostrar la información
 function mostrar_info_usuario($usuario) {
     echo "<div style='width: 80%; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9;'>
             <h2 style='color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px;'>Información del Usuario</h2>
@@ -32,53 +32,51 @@ function mostrar_info_usuario($usuario) {
                 </div>
             </div>";
 
-    // Mostrar información adicional según el perfil
     switch ($usuario['idPerfil']) {
-        case 1: // Super Administrador (SU)
+        case 1:
             echo "<div style='margin-top: 20px; padding: 15px; background-color: #e6f7ff; border-radius: 5px;'>
-                <h3 style='color: #0066cc;'>Privilegios de Super Administrador (SU)</h3>
-                <p>Tienes acceso completo al sistema, incluyendo la gestión de usuarios, perfiles, configuraciones y reportes globales.</p>
-              </div>";
+                    <h3 style='color: #0066cc;'>Privilegios de Super Administrador (SU)</h3>
+                    <p>Tienes acceso completo al sistema, incluyendo la gestión de usuarios, perfiles, configuraciones y reportes globales.</p>
+                  </div>";
             break;
-        case 2: // Administrador (ADM)
+        case 2:
             echo "<div style='margin-top: 20px; padding: 15px; background-color: #fff2e6; border-radius: 5px;'>
-                <h3 style='color: #cc6600;'>Privilegios de Administrador (ADM)</h3>
-                <p>Puedes gestionar usuarios, perfiles y configuraciones dentro de tu área asignada.</p>
-              </div>";
+                    <h3 style='color: #cc6600;'>Privilegios de Administrador (ADM)</h3>
+                    <p>Puedes gestionar usuarios, perfiles y configuraciones dentro de tu área asignada.</p>
+                  </div>";
             break;
-        case 3: // Coordinador (COR)
+        case 3:
             echo "<div style='margin-top: 20px; padding: 15px; background-color: #e6ffe6; border-radius: 5px;'>
-                <h3 style='color: #009933;'>Privilegios de Coordinador (COR)</h3>
-                <p>Puedes gestionar testigos y visualizar reportes de tu área asignada.</p>
-              </div>";
+                    <h3 style='color: #009933;'>Privilegios de Coordinador (COR)</h3>
+                    <p>Puedes gestionar testigos y visualizar reportes de tu área asignada.</p>
+                  </div>";
             break;
-        case 4: // Testigo (TES)
+        case 4:
             echo "<div style='margin-top: 20px; padding: 15px; background-color: #f0fff0; border-radius: 5px;'>
-                <h3 style='color: #33cc33;'>Privilegios de Testigo (TES)</h3>
-                <p>Puedes registrar información en tu casilla asignada y ver tus reportes.</p>
-              </div>";
+                    <h3 style='color: #33cc33;'>Privilegios de Testigo (TES)</h3>
+                    <p>Puedes registrar información en tu casilla asignada y ver tus reportes.</p>
+                  </div>";
             break;
-        case 5: // Invitado (IVT)
+        case 5:
             echo "<div style='margin-top: 20px; padding: 15px; background-color: #ffe6e6; border-radius: 5px;'>
-                <h3 style='color: #cc0000;'>Privilegios de Invitado (IVT)</h3>
-                <p>Tu perfil tiene acceso restringido. Contacta al administrador si necesitas más permisos.</p>
-              </div>";
+                    <h3 style='color: #cc0000;'>Privilegios de Invitado (IVT)</h3>
+                    <p>Tu perfil tiene acceso restringido. Contacta al administrador si necesitas más permisos.</p>
+                  </div>";
             break;
         default:
             echo "<div style='margin-top: 20px; padding: 15px; background-color: #f8d7da; border-radius: 5px;'>
-                <h3 style='color: #721c24;'>Privilegios No Definidos</h3>
-                <p>Tu perfil no tiene privilegios asignados. Contacta al administrador para más información.</p>
-              </div>";
+                    <h3 style='color: #721c24;'>Privilegios No Definidos</h3>
+                    <p>Tu perfil no tiene privilegios asignados. Contacta al administrador para más información.</p>
+                  </div>";
     }
 
     echo "
     <a href='/coordinadores_y_testigos/controladores/cerrar_sesion.php' style='display: inline-block; margin-top: 20px; padding: 10px 20px; background-color:rgb(255, 0, 0); color: white; text-decoration: none; border-radius: 5px;'>Cerrar Sesión</a>
     <a href='index.php' style='display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;'>Volver al Inicio</a>
-    </div>
-    ";
+    </div>";
 }
 
-// Mostrar la información del usuario actual
+// Mostrar datos si están disponibles
 if ($usuario_actual) {
     mostrar_info_usuario($usuario_actual);
 } else {

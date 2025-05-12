@@ -652,25 +652,15 @@ private function generar_tabla($sql, $columnas, $url_editar, $id_campo)
 //     return $resultado->fetch_assoc();
 // }
 
-public function obtener_usuario_por_control($control)
-{
-    $sql = "SELECT 
-                Control, 
-                Nombre, 
-                Apellido, 
-                usuario, 
-                contrasena, 
-                idPerfil
-            FROM Generales
-            WHERE Control = ?";
-    $con = $this->getBD();
-    $stmt = $con->prepare($sql);
-    $stmt->bind_param("s", $control);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-    
-    return $resultado->fetch_assoc();
-}
+    public function obtener_usuario_por_control($control) {
+        $sql = "SELECT Control, Nombre, Apellido, usuario, contrasena, idPerfil FROM Generales WHERE Control = ?";
+        $con = $this->getBD();
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param("s", $control);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        return $resultado->fetch_assoc();
+    }
 
 public function obtener_usuarios_por_perfil($idPerfil)
 {
